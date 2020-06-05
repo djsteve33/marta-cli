@@ -10,5 +10,5 @@ require_relative '../lib/marta_cli.rb'
 require "pry"
 Pry.start
 
-require "irb"
-IRB.start(__FILE__)
+#require "irb"
+#IRB.start(__FILE__)
