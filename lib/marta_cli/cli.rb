@@ -1,3 +1,3 @@
 class Cli 
-  puts "class Cli has loaded"
+  puts "Cli class loaded"
 end

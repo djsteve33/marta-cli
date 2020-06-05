@@ -1,3 +1,3 @@
 class Api 
-  puts "class Api has loaded"
+  puts "Api class loaded"
 end

@@ -1,3 +1,3 @@
 class Marta
-  puts "class Marta has loaded"
+  puts "Marta class loaded"
 end 
