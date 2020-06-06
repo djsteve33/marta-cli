@@ -18,4 +18,6 @@ class Cli
      puts "Welcome to Marta train info!"
    end 
    
+   
+   
 end
