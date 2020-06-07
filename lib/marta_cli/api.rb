@@ -13,7 +13,7 @@ class Api
      end
   end 
   
-  def self.get_marta_destination(station)
+  def self.get_details_by_station(station)
     res = RestClient.get("#{BASE_URL}#{station}")
     data = JSON.parse(res.body)
     

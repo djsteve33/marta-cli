@@ -40,7 +40,9 @@ class Cli
      end
       station
    end
-       
+       def get_marta_details(station)
+         Api.get_details_by_station(station)
+       end
    end
    
  
