@@ -10,6 +10,8 @@ class Cli
      print_all
      print_station_prompt
      station = valid_station?(prompt_selection)
+     updated_marta = get_marta_details(station)
+     print_details(updated_marta)
    end
    
    def print_all

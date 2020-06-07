@@ -14,14 +14,17 @@ class Api
   end 
   
   def self.get_details_by_station(station)
+    selected_train = Marta.find_by_station(station)
     res = RestClient.get("#{BASE_URL}#{station}")
     data = JSON.parse(res.body)
     
       # data.each do |marta|
     # destination = marta["destination"].split("/")[0]
-     direction = data[]
-     line = data[]
-     waiting_time = data[]
+     direction = data[1]
+     line = data[3]
+     waiting_time = data[8]
+     selected_train.update(direction, line, waiting_time)
+     selected_train
   end
      
 end
