@@ -10,6 +10,8 @@ class Cli
      print_all
      print_station_prompt
      station = valid_station?(prompt_selection)
+     #print_destination_prompt
+     #destination = valid_station?(prompt_selection)
      updated_marta = get_marta_details(station)
      print_details(updated_marta)
      print_continue
@@ -33,8 +35,12 @@ class Cli
    end
    
    def print_station_prompt
-     puts "For more train info, please select the station that you will be departing from:"
+     puts "For more train info, please enter the name of the station that you will be departing from:"
    end
+   
+   #def print_destination_prompt
+     #puts "And, now please enter the name of the station that you will be traveling to:"
+     #end
    
    def print_details
      puts "Station: #{marta.station}"
@@ -52,13 +58,13 @@ class Cli
      gets.chomp
    end
    
-   def valid_station?(station)
-     if station != Marta.all.size 
+   def valid_station?(station, destination)
+     if station != Marta.all.size || destination != Marta.all.size || destination == station
        print_error
        sleep 1 
        main
      end
-      station
+      station || destination
    end
    
    def continue?(choice)
