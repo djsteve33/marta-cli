@@ -12,6 +12,8 @@ class Cli
      station = valid_station?(prompt_selection)
      updated_marta = get_marta_details(station)
      print_details(updated_marta)
+     print_continue
+     continue?(prompt_selection)
    end
    
    def print_all
@@ -26,6 +28,10 @@ class Cli
      puts Rainbow("Welcome to Marta Train Info!").blue.bright
    end 
    
+   def print_goodbye
+     puts Rainbow("Goodbye!!!").white.bright
+   end
+   
    def print_station_prompt
      puts "For more train info, please select the station that you will be departing from:"
    end
@@ -37,6 +43,10 @@ class Cli
      puts "Line: #{marta.line}"
      puts "Waiting Time: #{marta.waiting_time}"
    end 
+   
+   def print_continue
+     puts "Would you like to continue? (y/n)"
+   end
    
    def prompt_selection
      gets.chomp
@@ -50,9 +60,16 @@ class Cli
      end
       station
    end
-       def get_marta_details(station)
-         Api.get_details_by_station(station)
-       end
+   
+   def continue?(choice)
+     if choice == "y"
+        main
+      else 
+       print_goodbye 
+   
+    def get_marta_details(station)
+        Api.get_details_by_station(station)
+    end
    end
    
 end
