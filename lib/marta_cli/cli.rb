@@ -30,6 +30,14 @@ class Cli
      puts "For more train info, please select the station that you will be departing from:"
    end
    
+   def print_details
+     puts "Station: #{marta.station}"
+     puts "Destination: #{marta.destination}"
+     puts "Direction: #{marta.direction}"
+     puts "Line: #{marta.line}"
+     puts "Waiting Time: #{marta.waiting_time}"
+   end 
+   
    def prompt_selection
      gets.chomp
    end
@@ -46,9 +54,5 @@ class Cli
          Api.get_details_by_station(station)
        end
    end
-   
- 
-   
-   
    
 end
