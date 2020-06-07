@@ -17,9 +17,11 @@ class Api
     res = RestClient.get("#{BASE_URL}#{station}")
     data = JSON.parse(res.body)
     
-       data.each do |marta|
-     destination = marta["destination"].split("/")[0]
-     end
+      # data.each do |marta|
+    # destination = marta["destination"].split("/")[0]
+     direction = data[]
+     line = data[]
+     waiting_time = data[]
   end
      
 end

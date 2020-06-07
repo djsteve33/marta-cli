@@ -1,6 +1,7 @@
 class Marta
   
-  attr_reader :station, :destination
+  attr_reader :station, :destination, :direction, :line,
+  :waiting_time
   @@all = []
   def initialize(station, destination)
     @station = station
