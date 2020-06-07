@@ -28,7 +28,7 @@ class Cli
    
    def print_welcome
      puts Rainbow("Welcome to Marta Train Info!").blue.bright
-     puts "loading..."
+     puts Rainbow("loading...").yellow.bright
      sleep 1 
    end 
    
