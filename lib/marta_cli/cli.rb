@@ -35,6 +35,7 @@ class Cli
    def valid_station?(station)
      if station != Marta.all.size 
        print_error
+       sleep 1 
        main
      end
       station
