@@ -24,4 +24,8 @@ class Marta
     self.waiting_time = waiting_time
   end
   
+  def has_details?
+    direction && line && waiting_time
+  end
+  
 end 

@@ -2,7 +2,7 @@ class Cli
   
   def run 
     print_welcome
-    Api.get_marta
+    Api.get_marta_station
     main
    end
    
@@ -31,7 +31,7 @@ class Cli
    end 
    
    def print_goodbye
-     puts Rainbow("Goodbye!!!").white.bright
+     puts Rainbow("Goodbye!!!").magenta.bright
    end
    
    def print_station_prompt
@@ -71,11 +71,14 @@ class Cli
      if choice == "y"
         main
       else 
-       print_goodbye 
+       print_goodbye
+     end
+   end
    
     def get_marta_details(station)
-        Api.get_details_by_station(station)
+      selected_train = Marta.find_by_station(station)
+        Api.get_details_by_station(station) unless selected_train.has_details?
+        selected_train
     end
-   end
    
 end

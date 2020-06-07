@@ -14,6 +14,7 @@ class Api
   end 
   
   def self.get_details_by_station(station)
+    puts "Getting details!"
     selected_train = Marta.find_by_station(station)
     res = RestClient.get("#{BASE_URL}#{station}")
     data = JSON.parse(res.body)
