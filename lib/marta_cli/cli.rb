@@ -15,7 +15,7 @@ class Cli
    end
    
    def welcome
-     puts "Welcome to Marta train info!"
+     puts Rainbow("Welcome to Marta train info!").blue
    end 
    
    

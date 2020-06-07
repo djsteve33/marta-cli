@@ -1,10 +1,10 @@
 class Marta
   
-  attr_reader :station_name, :destination_name
+  attr_reader :station, :destination
   @@all = []
-  def initialize(station_name, destination_name)
-    @station_name = station_name
-    @destination_name = destination_name
+  def initialize(station, destination)
+    @station = station
+    @destination = destination
     @@all << self 
   end
   

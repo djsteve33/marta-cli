@@ -4,10 +4,10 @@ class Api
   def self.get_marta  
     res = RestClient.get(BASE_URL)
     data = JSON.parse(res.body)
-       data[].each do |marta|
-     station_name = marta['station_name']
-     destination_name = marta[]
-     Marta.new(station_name, destination_name)
+       data.each do |marta|
+     station = marta["station"].split("/")[5]
+     #destination = marta["destination"]
+     Marta.new(station)
     end
   end 
 end
