@@ -6,10 +6,10 @@ class Api
     data = JSON.parse(res.body)
     
        data.each do |marta|
-     station = marta["station"].split("/")[5]
-     #destination = marta["destination"]
+      station = marta["STATION"]
+     destination = marta["DESTINATION"]
      
-     Marta.new(station)
+     Marta.new(station, destination)
      end
   end 
   

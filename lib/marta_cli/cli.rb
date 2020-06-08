@@ -45,11 +45,11 @@ class Cli
      #end
    
    def print_details
-     puts "Station: #{marta.station}"
-     puts "Destination: #{marta.destination}"
-     puts "Direction: #{marta.direction}"
-     puts "Line: #{marta.line}"
-     puts "Waiting Time: #{marta.waiting_time}"
+     puts "Station:  #{marta.station}"
+     puts "Destination:  #{marta.destination}"
+     puts "Direction:  #{marta.direction}"
+     puts "Line:  #{marta.line}"
+     puts "Waiting Time:  #{marta.waiting_time}"
    end 
    
    def print_continue
@@ -57,16 +57,18 @@ class Cli
    end
    
    def prompt_selection
-     gets.chomp
+     gets.chomp.upcase
    end
    
-   def valid_station?(station, destination)
-     if station != Marta.all.size || destination != Marta.all.size || destination == station
-       print_error
+   def valid_station?(station)
+     binding.pry
+     if station.find {|m|m["STATION"]}
+        station
+     else
+      print_error
        sleep 1 
        main
      end
-      station || destination
    end
    
    def continue?(input)
