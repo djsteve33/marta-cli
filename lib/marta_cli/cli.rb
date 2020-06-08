@@ -69,12 +69,18 @@ class Cli
       station || destination
    end
    
-   def continue?(choice)
-     if choice == "y"
+   def continue?(input)
+      if input == "y"
         main
-      else 
-       print_goodbye
-     end
+      elsif input == "n"
+        puts ""
+        puts "Thank you! Have a great day!"
+        exit
+      else
+        puts ""
+        puts "I don't understand that answer."
+        main 
+      end
    end
    
     def get_marta_details(station)
