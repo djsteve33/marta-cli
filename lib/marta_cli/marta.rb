@@ -17,7 +17,8 @@ class Marta
     @@all
   end 
   
-  def update(direction, line, waiting_time)
+  def update(destination, direction, line, waiting_time)
+    self.destination = destination
     self.direction = direction
     self.line = line
     self.waiting_time = waiting_time
