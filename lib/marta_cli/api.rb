@@ -8,12 +8,12 @@ class Api
     data = JSON.parse(res.body)
     
     data.each do |data| 
-      
+      station = data["STATION"]
      destination = data["DESTINATION"]
      direction = data["DIRECTION"]
      line = data["LINE"]
-     binding.pry
      waiting_time = data["WAITING_TIME"]
+     Marta.new(station, destination, direction, line, waiting_time)
     end   
   end  
 end
