@@ -1,13 +1,14 @@
 class Api 
-  BASE_URL = 'http://developer.itsmarta.com/RealtimeTrain/RestServiceNextTrain/GetRealtimeArrivals?apikey=18eb4629-edaa-43ea-aa34-1848d012c788'
+  BASE_URL = 'http://developer.itsmarta.com/RealtimeTrain/RestServiceNextTrain/GetRealtimeArrivals?apikey='
+  #KEY = ENV['API_KEY']
   
   def self.get_marta_station  
     res = RestClient.get(BASE_URL)
     data = JSON.parse(res.body)
     
-       data.each.with_index do |marta,i|
+       data.each.with_index do |marta,i, station|
        station = marta["STATION"]
-       puts "#{i}.#{m.station.capitalize!}"}
+       puts "#{i}.#{marta.station.capitalize!}"
        end 
        Marta.new(station)
   end 

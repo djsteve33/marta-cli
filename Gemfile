@@ -7,4 +7,4 @@ gem 'pry'
 gem 'rest-client'
 gem 'json'
 gem 'rainbow', '~> 3.0'
-
+gem 'dotenv'
