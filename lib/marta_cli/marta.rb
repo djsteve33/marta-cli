@@ -25,7 +25,7 @@ class Marta
   end
   
   def has_details?
-    direction && line && waiting_time
+    destination && direction && line && waiting_time
   end
   
 end 

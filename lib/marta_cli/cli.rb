@@ -19,7 +19,7 @@ class Cli
    end
    
    def print_all
-     Marta.all.each {|m| puts "#{i}. #{m.station.capitalize!}"}
+     Marta.all.each {|m| puts "#{i}.#{m.station.capitalize!}"}
    end
    
    def print_error
