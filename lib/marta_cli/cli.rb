@@ -61,7 +61,7 @@ class Cli
       else
         puts "Not sure what you want, type list or exit."
       end
-     end
+     #end
    end
     
      #puts "For more train info, please enter the name of the station that you will be departing from:"
