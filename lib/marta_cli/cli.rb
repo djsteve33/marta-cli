@@ -19,7 +19,7 @@ class Cli
    end
    
    def print_all
-     Marta.all.each {|m| puts "#{m.station}"}
+     Marta.all.each {|m| puts "#{m.station.capitalize!}"}
    end
    
    def print_error
@@ -61,8 +61,8 @@ class Cli
    end
    
    def valid_station?(station)
-     binding.pry
-     if station.find {|m|m["STATION"]}
+     Marta.all.find {|s|s("STATION")}
+        if station == 
         station
      else
       print_error

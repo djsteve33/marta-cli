@@ -6,10 +6,9 @@ class Api
     data = JSON.parse(res.body)
     
        data.each do |marta|
-      station = marta["STATION"]
-     destination = marta["DESTINATION"]
-     
-     Marta.new(station, destination)
+       station = marta["STATION"]
+       
+       Marta.new(station)
      end
   end 
   
@@ -19,12 +18,11 @@ class Api
     res = RestClient.get("#{BASE_URL}#{station}")
     data = JSON.parse(res.body)
     
-      # data.each do |marta|
-    # destination = marta["destination"].split("/")[0]
+     destination = data[0]
      direction = data[1]
      line = data[3]
      waiting_time = data[8]
-     selected_train.update(direction, line, waiting_time)
+     selected_train.update(destination, direction, line, waiting_time)
      selected_train
   end
      

@@ -3,9 +3,8 @@ class Marta
   attr_reader :station, :destination
   attr_accessor :direction, :line, :waiting_time
   @@all = []
-  def initialize(station, destination)
+  def initialize(station)
     @station = station
-    @destination = destination
     @@all << self 
   end
   
