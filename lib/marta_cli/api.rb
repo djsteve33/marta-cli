@@ -3,13 +3,19 @@ class Api
   KEY = ENV['API_KEY']
   
   def self.get_marta_station  
-    res = RestClient.get(BASE_URL + KEY)
+    res = RestClient.get("#{BASE_URL} #{KEY}")
+    #binding.pry
     data = JSON.parse(res.body)
     
     data.each do |data| 
+      
      destination = data["DESTINATION"]
+     direction = data["DIRECTION"]
+     line = data["LINE"]
+     binding.pry
+     waiting_time = data["WAITING_TIME"]
     end   
-     
+  end  
 end
 
 #data.each.with_index do |marta,i, station|

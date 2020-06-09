@@ -3,8 +3,8 @@ class Cli
   def run 
     print_welcome
     Api.get_marta_station
-    main
-    print_goodbye
+   # main
+    #print_goodbye
    end
    
    def main
