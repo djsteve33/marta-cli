@@ -5,7 +5,7 @@ class Api
     res = RestClient.get(BASE_URL)
     data = JSON.parse(res.body)
     
-       data.each do |marta|
+       data.each.with_index do |marta,i|
        station = marta["STATION"]
        
        Marta.new(station)

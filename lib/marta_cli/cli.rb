@@ -19,7 +19,7 @@ class Cli
    end
    
    def print_all
-     Marta.all.each {|m| puts "#{m.station.capitalize!}"}
+     Marta.all.each {|m| puts "#{i}. #{m.station.capitalize!}"}
    end
    
    def print_error
@@ -57,7 +57,7 @@ class Cli
    end
    
    def prompt_selection
-     gets.chomp.upcase
+     gets.strip.downcase
    end
    
    def valid_station?(station)
