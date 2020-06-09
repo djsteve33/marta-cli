@@ -3,22 +3,24 @@ class Cli
   def run 
     print_welcome
     Api.get_marta_station
+    print_stations
+    menu
    # main
     #print_goodbye
    end
    
-   def main
+  # def main
      #print_all
-     menu
+     #menu
      #print_station_prompt
      #station = valid_station?(prompt_selection)
      #print_destination_prompt
      #destination = valid_station?(prompt_selection)
-     updated_marta = get_marta_details(station)
-     print_details(updated_marta)
+     #updated_marta = get_marta_details(station)
+     #print_details(updated_marta)
      #print_continue
      #continue?(prompt_selection)
-   end
+   #end
     
   def print_welcome
      puts Rainbow("Welcome to Marta Train Info!").blue.bright
@@ -36,23 +38,29 @@ class Cli
     # puts "Invalid station name. Please try again"
    #end
    
-   
-   
-   def print_goodbye
-     puts Rainbow("Thank you! Have a great day!").magenta.bright
+   def print_stations
+     Marta.all.each_with_index do |data, index|
+       puts "#{index + 1}. #{data.station}"
+     end
    end
    
+   
+   
+   #def print_goodbye
+    # puts Rainbow("Thank you! Have a great day!").magenta.bright
+   #end
+   
    def menu
-      input = nil
+     input = nil
     while input != "exit"
       puts "Enter the number of the station that you'd like more info on, type list to see the stations again, or type exit:"
       input = gets.strip.downcase
-      
+      station = Marta.all
       if input.to_i > 0
         the_station = @station[input.to_i-1]
         print_details
-         #puts "Station:  #{marta.station}"
-         #puts "Destination:  #{marta.destination}"
+         puts "Station:  #{marta.station}"
+         puts "Destination:  #{marta.destination}"
         # puts "Direction:  #{marta.direction}"
          #puts "Line:  #{marta.line}"
          #puts "Waiting Time:  #{marta.waiting_time}"
@@ -61,23 +69,23 @@ class Cli
       else
         puts "Not sure what you want, type list or exit."
       end
-     #end
+     end
    end
     
      #puts "For more train info, please enter the name of the station that you will be departing from:"
-   end
+   #end
    
    #def print_destination_prompt
      #puts "And, now please enter the name of the station that you will be traveling to:"
      #end
    
-   def print_details
-     puts "Station:  #{marta.station}"
-     puts "Destination:  #{marta.destination}"
-     puts "Direction:  #{marta.direction}"
-     puts "Line:  #{marta.line}"
-     puts "Waiting Time:  #{marta.waiting_time}"
-   end 
+  # def print_details
+     #puts "Station:  #{marta.station}"
+     #puts "Destination:  #{marta.destination}"
+     #puts "Direction:  #{marta.direction}"
+    # puts "Line:  #{marta.line}"
+     #puts "Waiting Time:  #{marta.waiting_time}"
+   #end 
    
    #def print_continue
      #puts "Would you like to continue? (y/n)"
@@ -112,10 +120,10 @@ class Cli
       #end
    #end
    
-    def get_marta_details(station)
-      selected_train = Marta.find_by_station(station)
-        Api.get_details_by_station(station) unless selected_train.has_details?
-        selected_train
-    end
+   # def get_marta_details(station)
+     # selected_train = Marta.find_by_station(station)
+       # Api.get_details_by_station(station) unless selected_train.has_details?
+        #selected_train
+   # end
    
 end

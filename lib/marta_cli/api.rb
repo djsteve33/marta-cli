@@ -7,17 +7,20 @@ class Api
     #binding.pry
     data = JSON.parse(res.body)
     
-    data.each do |data| 
+    data.collect do |data| 
       station = data["STATION"]
      destination = data["DESTINATION"]
      direction = data["DIRECTION"]
      line = data["LINE"]
      waiting_time = data["WAITING_TIME"]
      Marta.new(station, destination, direction, line, waiting_time)
+    
     end   
   end  
 end
-
+test = [1,2,3]
+# binding.pry
+ 
 #data.each.with_index do |marta,i, station|
  #      station = marta["STATION"]
   #     puts "#{i}.#{marta.station.capitalize!}"
