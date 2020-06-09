@@ -8,7 +8,7 @@ class Cli
    end
    
    def main
-     print_all
+     #print_all
      menu
      #print_station_prompt
      #station = valid_station?(prompt_selection)
@@ -28,9 +28,9 @@ class Cli
    
   
    
-   def print_all
-     Marta.all.each {|m| puts "#{i}.#{m.station.capitalize!}"}
-   end
+   #def print_all(i)
+    # Marta.all.each.with_index {|m| puts "#{i}.#{m.station.capitalize!}"}
+   #end
    
   # def print_error
     # puts "Invalid station name. Please try again"
@@ -103,7 +103,7 @@ class Cli
       #elsif input == "n"
        # puts ""
         #puts "Thank you! Have a great day!"
-        e#xit
+        #exit
       #else
        # puts ""
        # puts "I don't understand that answer."

@@ -7,9 +7,9 @@ class Api
     
        data.each.with_index do |marta,i|
        station = marta["STATION"]
-       
+       puts "#{i}.#{m.station.capitalize!}"}
+       end 
        Marta.new(station)
-     end
   end 
   
   def self.get_details_by_station(station)
