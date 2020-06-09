@@ -6,25 +6,29 @@ class Api
     res = RestClient.get(BASE_URL + KEY)
     data = JSON.parse(res.body)
     
-       data.each.with_index do |marta,i, station|
-       station = marta["STATION"]
-       puts "#{i}.#{marta.station.capitalize!}"
-       end 
-       Marta.new(station)
-  end 
-  
-  def self.get_details_by_station(station)
-    puts "Getting details!"
-    selected_train = Marta.find_by_station(station)
-    res = RestClient.get("#{BASE_URL}#{station}")
-    data = JSON.parse(res.body)
-    
-     destination = data[0]
-     direction = data[1]
-     line = data[3]
-     waiting_time = data[8]
-     selected_train.update(destination, direction, line, waiting_time)
-     selected_train
-  end
+    data.each do |data| 
+     destination = data["DESTINATION"]
+    end   
      
 end
+
+#data.each.with_index do |marta,i, station|
+ #      station = marta["STATION"]
+  #     puts "#{i}.#{marta.station.capitalize!}"
+   #    end 
+    #   Marta.new(station)
+  #end 
+  
+ # def self.get_details_by_station(station)
+   # puts "Getting details!"
+    #selected_train = Marta.find_by_station(station)
+    #res = RestClient.get("#{BASE_URL}#{station}")
+    #data = JSON.parse(res.body)
+    
+    # destination = data[0]
+     #direction = data[1]
+     #line = data[3]
+     #waiting_time = data[8]
+     #selected_train.update(destination, direction, line, waiting_time)
+     #selected_train
+ # end
