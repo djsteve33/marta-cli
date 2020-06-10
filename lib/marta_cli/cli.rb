@@ -60,12 +60,7 @@ class Cli
       
       if input.to_i > 0 && input.to_i < Marta.all.count
         #the_station = @station[input.to_i-1]
-        print_station_details
-         #puts "Station:  #{marta.station}"
-         #puts "Destination:  #{marta.destination}"
-        # puts "Direction:  #{marta.direction}"
-         #puts "Line:  #{marta.line}"
-         #puts "Waiting Time:  #{marta.waiting_time}"
+        print_station_details(input)
       elsif input == "list"
         print_stations
       else
@@ -81,8 +76,10 @@ class Cli
      #puts "And, now please enter the name of the station that you will be traveling to:"
      #end
    
-   def print_station_details
-        Marta.all.each do |data|
+   def print_station_details(input)
+     
+       index = input.to_i-1
+       data = Marta.all[index]
           
      puts "Station:  #{data.station}"
      puts "Destination:  #{data.destination}"
@@ -91,7 +88,6 @@ class Cli
      puts "Waiting Time:  #{data.waiting_time}"
      puts ""
      puts ""
-     end
    end 
    
    #def print_continue
