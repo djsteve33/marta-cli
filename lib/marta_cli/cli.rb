@@ -15,15 +15,15 @@ class Cli
   end 
    
   def print_stations
-     Marta.all.each_with_index.uniq do |data, index|
-       puts "#{index + 1}. #{data.station}"
+     Marta.all.each_with_index do |data, index|
+       puts "#{index + 1}. #{data.station.capitalize} going to #{data.destination}"
      end
   end
    
   def menu
       input = nil
     while input != "exit"
-      puts "Enter the number of the station that you'd like more info on, type list to see the stations again, or type exit:"
+      puts "Please enter the number of the station and destination that you'd like more info on, type list to see the stations again, or type exit:"
       
       input = gets.strip.downcase
      
@@ -41,8 +41,10 @@ class Cli
      
        index = input.to_i-1
        data = Marta.all[index]
-          
-     puts "Station:  #{data.station}"
+       
+     puts ""
+     puts ""     
+     puts "Station:  #{data.station.capitalize}"
      puts "Destination:  #{data.destination}"
      puts "Direction:  #{data.direction}"
      puts "Line:  #{data.line}"
