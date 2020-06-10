@@ -54,18 +54,20 @@ class Cli
      input = nil
     while input != "exit"
       puts "Enter the number of the station that you'd like more info on, type list to see the stations again, or type exit:"
+      
       input = gets.strip.downcase
-      station = Marta.all
-      if input.to_i > 0 && < 82
+      #station = Marta.all
+      
+      if input.to_i > 0 && input.to_i < Marta.all.count
         #the_station = @station[input.to_i-1]
-        print_details
-         puts "Station:  #{marta.station}"
-         puts "Destination:  #{marta.destination}"
+        print_station_details
+         #puts "Station:  #{marta.station}"
+         #puts "Destination:  #{marta.destination}"
         # puts "Direction:  #{marta.direction}"
          #puts "Line:  #{marta.line}"
          #puts "Waiting Time:  #{marta.waiting_time}"
       elsif input == "list"
-        print_all
+        print_stations
       else
         puts "Not sure what you want, type list or exit."
       end
@@ -79,13 +81,14 @@ class Cli
      #puts "And, now please enter the name of the station that you will be traveling to:"
      #end
    
-  # def print_details
-     #puts "Station:  #{marta.station}"
-     #puts "Destination:  #{marta.destination}"
+   def print_station_details(station, destination, direction, line, waiting_time)
+        Marta.all.each do |data|
+     puts "Station:  #{data.station}"
+     #puts "Destination:  #{data.destination}"
      #puts "Direction:  #{marta.direction}"
     # puts "Line:  #{marta.line}"
      #puts "Waiting Time:  #{marta.waiting_time}"
-   #end 
+   end 
    
    #def print_continue
      #puts "Would you like to continue? (y/n)"

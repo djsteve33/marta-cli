@@ -13,13 +13,14 @@ class Api
      direction = data["DIRECTION"]
      line = data["LINE"]
      waiting_time = data["WAITING_TIME"]
+     
      Marta.new(station, destination, direction, line, waiting_time)
     
     end   
   end  
 end
-test = [1,2,3]
- binding.pry
+#test = [1,2,3]
+ #binding.pry
  
 #data.each.with_index do |marta,i, station|
  #      station = marta["STATION"]
@@ -28,7 +29,7 @@ test = [1,2,3]
     #   Marta.new(station)
   #end 
   
- # def self.get_details_by_station(station)
+ # def self.get_details_by_station(station, destination, direction, line, waiting_time)
    # puts "Getting details!"
     #selected_train = Marta.find_by_station(station)
     #res = RestClient.get("#{BASE_URL}#{station}")
