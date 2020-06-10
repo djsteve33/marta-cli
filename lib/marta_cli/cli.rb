@@ -5,61 +5,29 @@ class Cli
     Api.get_marta_station
     print_stations
     menu
-   # main
     print_goodbye
-   end
+  end
    
-  # def main
-     #print_all
-     #menu
-     #print_station_prompt
-     #station = valid_station?(prompt_selection)
-     #print_destination_prompt
-     #destination = valid_station?(prompt_selection)
-     #updated_marta = get_marta_details(station)
-     #print_details(updated_marta)
-     #print_continue
-     #continue?(prompt_selection)
-   #end
-    
   def print_welcome
      puts Rainbow("Welcome to Marta Train Info!").blue.bright
      puts Rainbow("loading...").yellow.bright
      sleep 1 
-   end 
+  end 
    
-  
-   
-   #def print_all(i)
-    # Marta.all.each.with_index {|m| puts "#{i}.#{m.station.capitalize!}"}
-   #end
-   
-  # def print_error
-    # puts "Invalid station name. Please try again"
-   #end
-   
-   def print_stations
+  def print_stations
      Marta.all.each_with_index.uniq do |data, index|
        puts "#{index + 1}. #{data.station}"
      end
-   end
+  end
    
-   
-   
-   def print_goodbye
-    puts Rainbow("Thank you! Have a great day!").magenta.bright
-   end
-   
-   def menu
-     input = nil
+  def menu
+      input = nil
     while input != "exit"
       puts "Enter the number of the station that you'd like more info on, type list to see the stations again, or type exit:"
       
       input = gets.strip.downcase
-      #station = Marta.all
-      
+     
       if input.to_i > 0 && input.to_i < Marta.all.count
-        #the_station = @station[input.to_i-1]
         print_station_details(input)
       elsif input == "list"
         print_stations
@@ -69,13 +37,6 @@ class Cli
      end
    end
     
-     #puts "For more train info, please enter the name of the station that you will be departing from:"
-   #end
-   
-   #def print_destination_prompt
-     #puts "And, now please enter the name of the station that you will be traveling to:"
-     #end
-   
    def print_station_details(input)
      
        index = input.to_i-1
@@ -88,45 +49,10 @@ class Cli
      puts "Waiting Time:  #{data.waiting_time}"
      puts ""
      puts ""
-   end 
+  end 
    
-   #def print_continue
-     #puts "Would you like to continue? (y/n)"
-   #end
-   
-  # def prompt_selection
-   #  gets.strip.downcase
-   #end
-   
-   #def valid_station?(station)
-    # Marta.all.find {|s|s("STATION")}
-    #    if station == 
-     #   station
-   #  else
-    #  print_error
-    #   sleep 1 
-     #  main
-    # end
-  # end
-   
-   #def continue?(input)
-     # if input == "y"
-       # main
-      #elsif input == "n"
-       # puts ""
-        #puts "Thank you! Have a great day!"
-        #exit
-      #else
-       # puts ""
-       # puts "I don't understand that answer."
-        #main 
-      #end
-   #end
-   
-   # def get_marta_details(station)
-     # selected_train = Marta.find_by_station(station)
-       # Api.get_details_by_station(station) unless selected_train.has_details?
-        #selected_train
-   # end
-   
+  def print_goodbye
+    puts Rainbow("Thank you! Have a great day!").magenta.bright
+  end
+ 
 end
