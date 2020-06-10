@@ -29,7 +29,9 @@ class Marta
   #end
   
   attr_reader :station, :destination, :direction, :line, :waiting_time
+  
   @@all = []
+  
   def initialize(station, destination, direction, line, waiting_time)
     @station = station
     @destination = destination

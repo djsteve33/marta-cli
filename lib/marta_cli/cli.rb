@@ -56,8 +56,8 @@ class Cli
       puts "Enter the number of the station that you'd like more info on, type list to see the stations again, or type exit:"
       input = gets.strip.downcase
       station = Marta.all
-      if input.to_i > 0
-        the_station = @station[input.to_i-1]
+      if input.to_i > 0 && < 82
+        #the_station = @station[input.to_i-1]
         print_details
          puts "Station:  #{marta.station}"
          puts "Destination:  #{marta.destination}"

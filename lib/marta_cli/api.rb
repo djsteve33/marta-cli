@@ -8,7 +8,7 @@ class Api
     data = JSON.parse(res.body)
     
     data.collect do |data| 
-      station = data["STATION"]
+     station = data["STATION"]
      destination = data["DESTINATION"]
      direction = data["DIRECTION"]
      line = data["LINE"]
@@ -19,7 +19,7 @@ class Api
   end  
 end
 test = [1,2,3]
-# binding.pry
+ binding.pry
  
 #data.each.with_index do |marta,i, station|
  #      station = marta["STATION"]
