@@ -6,7 +6,7 @@ class Cli
     print_stations
     menu
    # main
-    #print_goodbye
+    print_goodbye
    end
    
   # def main
@@ -46,9 +46,9 @@ class Cli
    
    
    
-   #def print_goodbye
-    # puts Rainbow("Thank you! Have a great day!").magenta.bright
-   #end
+   def print_goodbye
+    puts Rainbow("Thank you! Have a great day!").magenta.bright
+   end
    
    def menu
      input = nil
@@ -69,7 +69,7 @@ class Cli
       elsif input == "list"
         print_stations
       else
-        puts "Not sure what you want, type list or exit."
+        puts "Not sure what you want. Please type list or exit."
       end
      end
    end
@@ -84,10 +84,10 @@ class Cli
    def print_station_details(station, destination, direction, line, waiting_time)
         Marta.all.each do |data|
      puts "Station:  #{data.station}"
-     #puts "Destination:  #{data.destination}"
-     #puts "Direction:  #{marta.direction}"
-    # puts "Line:  #{marta.line}"
-     #puts "Waiting Time:  #{marta.waiting_time}"
+     puts "Destination:  #{data.destination}"
+     puts "Direction:  #{marta.direction}"
+     puts "Line:  #{marta.line}"
+     puts "Waiting Time:  #{marta.waiting_time}"
    end 
    
    #def print_continue
