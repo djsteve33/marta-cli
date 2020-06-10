@@ -39,7 +39,7 @@ class Cli
    #end
    
    def print_stations
-     Marta.all.each_with_index do |data, index|
+     Marta.all.each_with_index.uniq do |data, index|
        puts "#{index + 1}. #{data.station}"
      end
    end
@@ -81,13 +81,17 @@ class Cli
      #puts "And, now please enter the name of the station that you will be traveling to:"
      #end
    
-   def print_station_details(station, destination, direction, line, waiting_time)
+   def print_station_details
         Marta.all.each do |data|
+          
      puts "Station:  #{data.station}"
      puts "Destination:  #{data.destination}"
-     puts "Direction:  #{marta.direction}"
-     puts "Line:  #{marta.line}"
-     puts "Waiting Time:  #{marta.waiting_time}"
+     puts "Direction:  #{data.direction}"
+     puts "Line:  #{data.line}"
+     puts "Waiting Time:  #{data.waiting_time}"
+     puts ""
+     puts ""
+     end
    end 
    
    #def print_continue
