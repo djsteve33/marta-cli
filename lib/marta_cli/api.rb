@@ -5,7 +5,6 @@ class Api
   
   def self.get_marta_station  
     res = RestClient.get("#{BASE_URL} #{KEY}")
-    #binding.pry
     data = JSON.parse(res.body)
     
     data.collect do |data| 
