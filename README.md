@@ -1,11 +1,6 @@
-Hello World
+# MARTA Train Info
 
-# Marta::Cli
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/marta/cli`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
+Welcome to MARTA Train Info! MARTA is an acronym for Metro Atlanta Rapid Transit Authority. MARTA provides both bus and rail trasnportation for residents of Metro Atlanta. This application focuses on the train stations in the MARTA system.
 ## Installation
 
 Add this line to your application's Gemfile:

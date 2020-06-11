@@ -2,14 +2,14 @@ class Cli
   
   def run 
     print_welcome
-    Api.get_marta_station
+    Api.get_marta_train_stations
     print_stations
     menu
     print_goodbye
   end
    
   def print_welcome
-     puts Rainbow("Welcome to Marta Train Info!").blue.bright
+     puts Rainbow("Welcome to MARTA Train Info!").blue.bright
      puts Rainbow("loading...").yellow.bright
      sleep 1 
   end 
