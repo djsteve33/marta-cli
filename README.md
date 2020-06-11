@@ -22,7 +22,7 @@ Or install it yourself as:
 
 To run the program, you will first need to obtain an API Key from MARTA. You can do that here: https://www.itsmarta.com/developer-reg-rtt.aspx. 
 
-To start running the program, first run 'bin/setup'. Then, run 'bin/run'. When the program begins, you will see a Welcome message followed by a list of MARTA train stations. Next, you will then be prompted to select a train station by its corresponding number, type list to see the list of train stations again, or type exit to exit the program.
+To start running the program, first run 'bin/setup'. Then, run 'bin/run'. When the program begins, you will see a Welcome message followed by a list of MARTA train stations. Next, you will be prompted to select a train station by its corresponding number, type list to see the list of train stations again, or type exit to exit the program.
 
 If you type something other than a valid number, the word "list", or the word "exit" at the prompt, you will get an error prompting you to type list or exit.
 
