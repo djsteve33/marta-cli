@@ -15,7 +15,7 @@ class Cli
   end 
    
   def print_stations
-     Marta.all.each_with_index do |data, index|
+     Marta.all.each_with_index.sort do |data, index|
        puts "#{index + 1}. #{data.station.capitalize} going to #{data.destination}"
      end
   end
@@ -23,7 +23,7 @@ class Cli
   def menu
       input = nil
     while input != "exit"
-      puts "Please enter the number of the station and destination that you'd like more info on, type list to see the stations again, or type exit:"
+      puts Rainbow("Please enter the number of the station and destination that you'd like more info on, type list to see the stations again, or type exit:")
       
       input = gets.strip.downcase
      
@@ -44,11 +44,11 @@ class Cli
        
      puts ""
      puts ""     
-     puts "Station:  #{data.station.capitalize}"
-     puts "Destination:  #{data.destination}"
-     puts "Direction:  #{data.direction}"
-     puts "Line:  #{data.line}"
-     puts "Waiting Time:  #{data.waiting_time}"
+     puts Rainbow("Station:  #{data.station.capitalize}").cyan.bright
+     puts Rainbow("Destination:  #{data.destination}").cyan.bright
+     puts Rainbow("Direction:  #{data.direction}").cyan.bright
+     puts Rainbow("Line:  #{data.line}").cyan.bright
+     puts Rainbow("Waiting Time:  #{data.waiting_time}").cyan.bright
      puts ""
      puts ""
   end 
