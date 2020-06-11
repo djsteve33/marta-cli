@@ -22,7 +22,7 @@ Or install it yourself as:
 
 To run the program, you will first need to obtain an API Key from MARTA. You can do that here: https://www.itsmarta.com/developer-reg-rtt.aspx. 
 
-To start running the program, first run 'bin/setup'. Then, run 'bin/run'. When the program begins, you will see a Welcome message then a list of MARTA train stations will display. You will then be prompted to select a train station by its corresponding number, type list to see the list of train stations again, or type exit to exit the program.
+To start running the program, first run 'bin/setup'. Then, run 'bin/run'. When the program begins, you will see a Welcome message followed by a list of MARTA train stations. Next, you will then be prompted to select a train station by its corresponding number, type list to see the list of train stations again, or type exit to exit the program.
 
 If you type something other than a valid number, the word "list", or the word "exit" at the prompt, you will get an error prompting you to type list or exit.
 
@@ -37,7 +37,7 @@ If you type exit at the prompt, you will see a Goodbye message and you will exit
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/'droll-agent-4580'/marta-cli. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+I would like thank my Cohort Lead, Michael Doherty, and my fellow Cohort classmate, Simo Khouili, for their contributions and assistance with this program.
 
 ## License
 
