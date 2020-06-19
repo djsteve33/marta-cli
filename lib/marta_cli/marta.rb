@@ -10,7 +10,7 @@ class Marta
     @direction = direction
     @line = line
     @waiting_time = waiting_time
-    @@all << self
+    @@all << self if !@@all.include?(self)
   end
   
   def self.all

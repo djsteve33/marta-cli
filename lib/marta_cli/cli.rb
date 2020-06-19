@@ -15,7 +15,7 @@ class Cli
   end 
    
   def print_stations
-     Marta.all.each_with_index do |data, index|
+     Marta.all.sort!{|a, b| a.station <=> b.station}.each_with_index do |data, index|
        puts Rainbow("#{index + 1}. #{data.station}").aqua
      end
   end
